@@ -1,14 +1,16 @@
 import React from 'react';
 import './App.css';
-
-import HomePage from './pages/HomePage';
+import { Routes, Route } from 'react-router-dom';
+import RegisterPage from './pages/RegisterPage/Register';
+import CategoryPage from './pages/CategoryPage/Category';
 
 function App() {
   return (
     <>
-    <div >
-      <HomePage/>
-    </div>
+    <Routes>
+    <Route path='/' element={<RegisterPage/>}/>
+    <Route path='/Category' element={<CategoryPage/>}/>
+    </Routes>
     </>
   );
 }
