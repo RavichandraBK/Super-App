@@ -1,0 +1,112 @@
+.categoryPage {
+    display: flex;
+    color: white;
+}
+
+.categoryText {
+    width: 600px;
+}
+
+.categoryText>p:nth-child(1) {
+    margin-left: 100px;
+
+    font-family: Single Day;
+    font-size: 71px;
+    font-weight: 400;
+    line-height: 99px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #72DB73;
+
+}
+
+.categoryText>p:nth-child(2) {
+    margin-left: 100px;
+
+    font-family: Roboto;
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 95px;
+    letter-spacing: 0em;
+    text-align: left;
+
+
+}
+
+.categoryCards {
+    margin-top: 30px;
+    margin-left: 200px;
+    width: 700px;
+}
+
+.categoryCards>div {
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.categoryNextPage {
+    background-color: #148A08;
+    width: 200px;
+    height: 56px;
+    border-radius: 39px;
+    border: none;
+    margin-top: 50px;
+    margin-left: 650px;
+    cursor: pointer;
+
+    font-family: DM Sans;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #fff;
+}
+
+.selected {
+    margin-left: 100px;
+    display: flex;
+    width: 400px;
+    flex-wrap: wrap;
+    box-sizing: content-box;
+
+}
+
+.selectedItems {
+    margin-left: 10px;
+    margin-top: 15px;
+    display: flex;
+    background-color: #148A08;
+    width: 190px;
+    height: 52px;
+    border-radius: 31px;
+    justify-content: space-around;
+    align-items: center;
+
+    font-family: Roboto;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 0px;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+.selectedItems span {
+    cursor: pointer;
+    color: #085C00;
+}
+.condCheck{
+    margin-left: 100px;
+    font-family: Roboto;
+font-size: 25px;
+font-weight: 400;
+line-height: 27px;
+letter-spacing: 0.02em;
+text-align: left;
+color: #FF0000;
+
+}
+.condCheck span{
+    margin-right: 10px;
+}

@@ -1,0 +1,33 @@
+.cardlayout {
+
+    width: 180px;
+    height: 169px;
+    border-radius: 20px;
+    /* background-color: orange; */
+    margin-left: 30px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.cardlayout :nth-child(1) {
+    margin-top: 20px;
+    text-align: left;
+    /* padding-top: 15px; */
+    margin-left: 15px;
+
+    font-family: DM Sans;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 10px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.cardlayout :nth-child(2) {
+    width: 150px;
+    margin-top: 0px;
+    margin-left: 15px;
+    /* margin-top: 0px; */
+    text-align: center;
+}
