@@ -61,16 +61,16 @@ const Category = () => {
     color: '#6CD061'
   },
   ]
-  let { Variables, setVariables,valid, setValid } = useContext(myContext);
-  let [nextClick,setNextClick] = useState(false);
+  let { Variables, setVariables, valid, setValid } = useContext(myContext);
+  let [nextClick, setNextClick] = useState(false);
   let handleNext = () => {
-      setNextClick(true);    
+    setNextClick(true);
   }
 
   let handlecancel = (id) => {
 
     setVariables((prev) => ({ ...prev, [id]: { ...prev[id], Border: false } }));
-    setValid((prev)=>({...prev,chk:prev.chk.filter((cardid)=>cardid!==id),count:prev.count-1}));
+    setValid((prev) => ({ ...prev, chk: prev.chk.filter((cardid) => cardid !== id), count: prev.count - 1 }));
     localStorage.removeItem(`choice${id}`);
 
 
@@ -86,7 +86,8 @@ const Category = () => {
             return Variables[item.id]?.Border && (<div key={item.id} className={styles.selectedItems}><p>{item.name}</p> <span onClick={() => handlecancel(item.id)}>X</span></div>);
           })}
         </div>
-        {valid.count<3&&nextClick && (<p className={styles.condCheck}><span><img src="/assets/Cards/Invalid.svg" alt="" /></span>Minimum 3 category required</p>)}
+        {valid.count < 3 && nextClick && (<p className={styles.condCheck}><span><img src="/assets/Cards/Invalid.svg" alt="" /></span>Minimum 3 category required</p>)}
+        {valid.chk.length >= 3 && nextClick && valid.chk.forEach((item) => localStorage.setItem(`choice${item}`, Variables[item].name))}
       </div>
       <div>
         <div className={styles.categoryCards}>

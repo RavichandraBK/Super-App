@@ -13,7 +13,6 @@ function App() {
       });
       let [Variables, setVariables] = useState({
         id:{
-          Border:false,
           NextPage:false,
         },
       });
