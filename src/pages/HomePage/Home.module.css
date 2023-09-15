@@ -1,0 +1,106 @@
+.HomeParent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.HomeLeft {
+
+}
+
+.HomeRight {
+
+}
+
+.HomeTop {}
+
+.HomeBottom {}
+
+.HomeInfo {}
+
+.HomeNotes {}
+
+.HomeProfile {
+    display: flex;
+    width: 507px;
+    min-height: 319px;
+    background-color: #5746EA;
+    border-radius: 19px;
+}
+
+.HomeProfile>img {
+    margin: 20px 0px 30px 30px;
+
+}
+
+.HomeProfile>div {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+
+
+.HomeProfile>div>div p:nth-child(1) {
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 10px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: #fff;
+    word-break: break-word;
+}
+
+.HomeProfile>div>div p:nth-child(2) {
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: #fff;
+    word-break: break-word;
+
+}
+
+.HomeProfile>div>div p:nth-child(3) {
+    font-family: Roboto;
+    font-size: 41px;
+    font-weight: 600;
+    line-height: 0px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: #fff;
+    word-break: break-word;
+
+}
+
+.profileChoices {
+
+    display: flex;
+    width: 300px;
+    flex-wrap: wrap;
+    box-sizing: content-box;
+    justify-content: space-around;
+}
+
+.FinalSel {
+    margin-top: 15px;
+    display: flex;
+    background-color: #9F94FF;
+    width: 135px;
+    height: 35px;
+    border-radius: 21px;
+    justify-content: space-around;
+    align-items: center;
+
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: #fff;
+}
+
+.HomeWeather {}

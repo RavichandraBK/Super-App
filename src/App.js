@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import RegisterPage from './pages/RegisterPage/Register';
 import CategoryPage from './pages/CategoryPage/Category';
+import HomePage from './pages/HomePage/Home'
 
 function App() {
       let [valid, setValid] = useState({
@@ -22,6 +23,7 @@ function App() {
     <Routes>
     <Route path='/' element={<RegisterPage/>}/>
     <Route path='/Category' element={<CategoryPage/>}/>
+    <Route path='/Home' element={<HomePage/>}/>
     </Routes>
     </myContext.Provider>
     </>
