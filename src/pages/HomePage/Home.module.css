@@ -4,13 +4,9 @@
     align-items: center;
 }
 
-.HomeLeft {
+.HomeLeft {}
 
-}
-
-.HomeRight {
-
-}
+.HomeRight {}
 
 .HomeTop {}
 
@@ -103,4 +99,121 @@
     color: #fff;
 }
 
-.HomeWeather {}
+.HomeWeather {
+    margin-top: 20px;
+    width: 507px;
+    height: 177;
+
+}
+
+.HomeWeather>div:nth-child(1) {
+    background-color: #FF4ADE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 19px 19px 0px 0px;
+    white-space: pre;
+    font-family: Roboto;
+    font-size: 33px;
+    font-weight: 600;
+    line-height: 0px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: #fff;
+
+}
+
+.HomeWeather>div:nth-child(2) {
+    background-color: #101744;
+    border-radius: 0px 0px 19px 19px;
+
+    display: flex;
+}
+
+.HomeWeather>div:nth-child(2)>div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    /* width: 150px; */
+}
+
+.HomeWeather>div:nth-child(2)>div:nth-child(1) p {
+    width: 150px;
+    margin-left: 10px;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #fff;
+
+
+}
+
+.HomeWeather>div:nth-child(2)>div:nth-child(3){
+    margin-left: 20px;
+}
+
+.HomeWeather>div:nth-child(2)>div:nth-child(3) p:nth-child(1) {
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 0px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #fff;
+
+}
+
+.HomeWeather>div:nth-child(2)>div:nth-child(3) div>p {
+    width: 100px;
+    margin-left: 10px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #fff;
+
+}
+
+.HomeWeather>div:nth-child(2)>div:nth-child(3) div {
+    display: flex;
+    vertical-align: middle;
+}
+
+.HomeWeather>div:nth-child(2)>div:nth-child(5) {
+    margin-left: 10px;
+}
+
+.HomeWeather>div:nth-child(2)>div:nth-child(5) div {
+    display: flex;
+}
+
+.HomeWeather>div:nth-child(2)>div:nth-child(5) div>p {
+    /* width: 85px; */
+    margin-left: 9px;
+
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #fff;
+
+}
+
+.HomeWeather>div:nth-child(2)>div:nth-child(2),
+.HomeWeather>div:nth-child(2)>div:nth-child(4) {
+    margin-top: 40px;
+    margin-right: 30px;
+    width: 0.1px;
+    height: 50px;
+    border: 1px solid #fff;
+}
