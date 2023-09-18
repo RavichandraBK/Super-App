@@ -8,13 +8,18 @@
 
 .HomeRight {}
 
-.HomeTop {}
+.HomeTop {
+    display: flex;
+    justify-content: space-between;
+}
 
 .HomeBottom {}
 
 .HomeInfo {}
 
-.HomeNotes {}
+.HomeNotes {
+    /* margin-left: 30px; */
+}
 
 .HomeProfile {
     display: flex;
@@ -262,35 +267,90 @@
     height: 100%;
     border-radius: 19px 19px 0px 0px;
 }
-.news>div:nth-child(1)>div{
+
+.news>div:nth-child(1)>div {
     position: relative;
     bottom: 125px;
     display: inline-block;
     word-break: break-word;
     width: 463px;
     height: 120px;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     /* text-align: left; */
     color: #fff;
 }
-.news>div:nth-child(1)>div p:nth-child(1){
+
+.news>div:nth-child(1)>div p:nth-child(1) {
     margin-left: 25px;
     font-family: Roboto;
-font-size: 20px;
-font-weight: 600;
-line-height: 1.5;
-letter-spacing: 0.02em;
-text-align: left;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: left;
     color: #fff;
 }
-.news>div:nth-child(1)>div p:nth-child(2){
+
+.news>div:nth-child(1)>div p:nth-child(2) {
     margin-left: 25px;
     font-family: Roboto;
-font-size: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 0;
+    letter-spacing: 0.02em;
+    text-align: left;
+
+    color: #fff;
+}
+
+.HomeNotes>div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 400px;
+    height: 400px;
+    margin-left: 50px;
+    background-color: #F1C75B;
+    border-radius: 20px;
+}
+
+.HomeNotes>div p{
+    margin-left: 30px;
+    font-family: Roboto;
+font-size: 38px;
 font-weight: 600;
-line-height: 0;
+line-height: 40px;
 letter-spacing: 0.02em;
 text-align: left;
 
-    color: #fff;
+}
+
+.HomeNotes>div textarea {
+    margin-left: 30px;
+    outline: none;
+    border: none;
+    resize: none;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    background-color: #F1C75B;
+}
+
+.HomeNotes>div textarea::-webkit-scrollbar {
+    width: 20px;
+    cursor: pointer;
+    
+}
+
+.HomeNotes>div textarea::-webkit-scrollbar-track {
+    display: none;
+}
+
+.HomeNotes>div textarea::-webkit-scrollbar-thumb {
+    background: #FFE6A6;
+    border-radius: 17px;
+    cursor: pointer;
 }

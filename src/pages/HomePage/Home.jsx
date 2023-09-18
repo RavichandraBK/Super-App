@@ -14,7 +14,6 @@ const Home = () => {
             .then((res) => res.json())
             .then((data) => {
                 const getArrNews = Math.floor(Math.random() * data.articles.length);
-                console.log(data.articles[getArrNews].title)
                 setNews((prev) => ({ 
                     ...prev, 
                     image: data.articles[getArrNews].urlToImage, 
@@ -40,7 +39,6 @@ const Home = () => {
                     dateTime: finaldate,
                     text: data.current.condition.text,
                     icon: data.current.condition.icon,
-                    //  icon: "//cdn.weatherapi.com/weather/64x64/day/116.png",
                     temp: data.current.temp_c,
                     pressure: data.current.pressure_mb,
                     windSpeed: data.current.wind_kph,
@@ -48,8 +46,10 @@ const Home = () => {
                 }))
                 setNews((prev)=>({...prev, newsTime:`${date} | ${time}`}));
             }).catch((err) => { console.log(err) });
-        // return data;
 
+    }
+    const handleNotes = (e)=>{
+        localStorage.setItem('Notes',e.target.value);
     }
 
 
@@ -112,7 +112,12 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.HomeNotes}></div>
+                        <div className={styles.HomeNotes}>
+                            <div>
+                                <p>All notes</p>
+                                <textarea name="allnotes" id="notes" cols="10" rows="10" onChange={handleNotes}></textarea>
+                            </div>
+                        </div>
                     </div>
                     <div className={styles.HomeBottom}></div>
                 </div>
