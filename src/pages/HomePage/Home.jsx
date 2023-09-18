@@ -1,13 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import styles from './Home.module.css'
+
 
 const Home = () => {
     const allKeys = Object.keys(localStorage);
     const SelItems = allKeys.filter(key => /^choice\d+$/.test(key));
     const [name, email, userName] = ['name', 'email', 'userName'].map((key) => localStorage.getItem(key));
     const [weather, setWeather] = useState({});
-    const wther = async () => {
-        await fetch('http://api.weatherapi.com/v1/current.json?key=e9ef1737e2a24d0ca66124245231509&q=India&aqi=yes').then((res) => {
+    const [news, setNews] = useState({});
+    const isexe = useRef(false);
+    const NewsApp = () => {
+        fetch('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=7071f0022f1f48629a9cbb8a61a62e6b')
+            .then((res) => res.json())
+            .then((data) => {
+                const getArrNews = Math.floor(Math.random() * data.articles.length);
+                console.log(data.articles[getArrNews].title)
+                setNews((prev) => ({ 
+                    ...prev, 
+                    image: data.articles[getArrNews].urlToImage, 
+                    desc:data.articles[getArrNews].description, 
+                    title: data.articles[getArrNews].title, 
+                }));
+                // console.log(data)
+            })
+    }
+    
+    const wther = () => {
+        fetch('http://api.weatherapi.com/v1/current.json?key=e9ef1737e2a24d0ca66124245231509&q=India&aqi=yes').then((res) => {
             return res.json();
         })
             .then((data) => {
@@ -15,6 +34,7 @@ const Home = () => {
                 const timedate = data.location.localtime;
                 const [date, time] = timedate.split(' ');
                 const finaldate = `${date}    ${time} PM`;
+                
                 setWeather((prev) => ({
                     ...prev,
                     dateTime: finaldate,
@@ -26,13 +46,20 @@ const Home = () => {
                     windSpeed: data.current.wind_kph,
                     humidity: data.current.humidity,
                 }))
+                setNews((prev)=>({...prev, newsTime:`${date} | ${time}`}));
             }).catch((err) => { console.log(err) });
         // return data;
 
     }
 
+
     useEffect(() => {
-        wther();
+        if (!isexe.current) {
+
+            wther();
+            NewsApp();
+            isexe.current = true;
+        }
     }, [])
     return (
         <>
@@ -41,7 +68,7 @@ const Home = () => {
                     <div className={styles.HomeTop}>
                         <div className={styles.HomeInfo}>
                             <div className={styles.HomeProfile}>
-                                <img src="/assets/HomeProfilePic.png" alt="Haribol" />
+                                <img src="/assets/HomeProfilePic.png" alt="" />
                                 <div>
                                     <div>
                                         <p onClick={wther}>{name ? name : 'KK Vinay'}</p>
@@ -65,21 +92,21 @@ const Home = () => {
                                     </div>
                                     <div></div>
                                     <div>
-                                        <p>{weather.temp}</p>
+                                        <p>{weather.temp}°C</p>
                                         <div>
                                             <img src="/assets/pressurebar.svg" alt="" />
-                                            <p>{weather.pressure}<br/>Pressure </p>
+                                            <p>{weather.pressure} mbar<br />Pressure </p>
                                         </div>
                                     </div>
                                     <div></div>
                                     <div>
                                         <div>
                                             <img src="/assets/windspeed.svg" alt="" />
-                                            <p>{weather.windSpeed} km/h<br/>wind</p>
+                                            <p>{weather.windSpeed} km/h<br />wind</p>
                                         </div>
                                         <div>
                                             <img src="/assets/humidity.svg" alt="" />
-                                            <p>{weather.humidity}%<br/>Humidiy</p>
+                                            <p>{weather.humidity}%<br />Humidiy</p>
                                         </div>
                                     </div>
                                 </div>
@@ -89,7 +116,20 @@ const Home = () => {
                     </div>
                     <div className={styles.HomeBottom}></div>
                 </div>
-                <div className={styles.HomeRight}></div>
+                <div className={styles.HomeRight}>
+                    <div className={styles.news}>
+                        <div>
+                            <img src={news.image} alt="" />
+                            <div> 
+                                <p>{news.title&&news.title.slice(0,80)+'...'}</p>
+                                <p>{news.newsTime}</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p>{news.desc}...</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     )
