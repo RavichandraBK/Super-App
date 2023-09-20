@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styles from './Home.module.css'
+import Timer from '../../components/Timer/Timer';
 
 
 const Home = () => {
@@ -51,7 +52,6 @@ const Home = () => {
     const handleNotes = (e)=>{
         localStorage.setItem('Notes',e.target.value);
     }
-
 
     useEffect(() => {
         if (!isexe.current) {
@@ -119,7 +119,9 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.HomeBottom}></div>
+                    <div className={styles.HomeBottom}>
+                        <Timer/>
+                    </div>
                 </div>
                 <div className={styles.HomeRight}>
                     <div className={styles.news}>
@@ -134,6 +136,7 @@ const Home = () => {
                             <p>{news.desc}...</p>
                         </div>
                     </div>
+                    <button className={styles.HomeBrowse}>Browse</button>
                 </div>
             </div>
         </>
